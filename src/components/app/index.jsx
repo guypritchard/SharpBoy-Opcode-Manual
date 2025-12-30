@@ -257,7 +257,9 @@ const App = () => {
                         onClick={() => openFromSearch(instruction)}
                         data-open-details="true"
                       >
-                        <span className={styles.resultOpCode}>{instruction.opCode.toUpperCase()}</span>
+                        <span className={styles.resultOpCode}>
+                          {`0x${instruction.opCode.toUpperCase()}`}
+                        </span>
                         <span className={styles.resultMnemonic}>{instruction.mnemonic}</span>
                       </button>
                     </li>

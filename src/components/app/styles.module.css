@@ -132,7 +132,7 @@
   width: 100%;
   text-align: left;
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 96px 1fr;
   gap: 10px;
   align-items: baseline;
   color: var(--text);
@@ -148,7 +148,8 @@
 
 .resultMnemonic {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  color: var(--muted);
+  color: var(--text);
+  opacity: 0.9;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
