@@ -6,8 +6,8 @@
   width: min(520px, 96vw);
   height: 100vh;
   overflow: auto;
-  background: #fff;
-  box-shadow: -2px 0px 12px 0 rgba(33, 33, 33, 0.25);
+  background: var(--surface);
+  box-shadow: -2px 0px 12px 0 var(--shadow);
   padding: 16px;
   transform: translateX(0);
   transition: transform 180ms ease;
@@ -21,13 +21,13 @@
 .header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--surface);
   padding: 4px 0 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
   margin-bottom: 12px;
 }
 
@@ -38,17 +38,18 @@
 }
 
 .close {
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 6px 10px;
-  background: #f9fafb;
+  background: var(--surface-2);
   cursor: pointer;
+  color: var(--text);
 }
 
 .close:hover,
 .close:focus-visible {
-  background: #f3f4f6;
-  outline: 2px solid rgba(37, 99, 235, 0.8);
+  background: var(--surface-2);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -60,4 +61,3 @@
 .sectionTitle {
   margin: 18px 0 8px 0;
 }
-

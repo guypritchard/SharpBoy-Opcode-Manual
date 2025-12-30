@@ -7,6 +7,8 @@ import { matchesInstruction } from '../../helpers/instruction-search';
 
 import styles from './styles.module.css';
 
+const THEME_STORAGE_KEY = 'sharpboy-opcode-manual-theme';
+
 const emptyInstruction = {
   mnemonic: '',
   type: '',
@@ -64,6 +66,13 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [hideNonMatches, setHideNonMatches] = useState(false);
   const [showResultsPanel, setShowResultsPanel] = useState(true);
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const stored = window.localStorage?.getItem(THEME_STORAGE_KEY);
+    if (stored === 'dark') return true;
+    if (stored === 'light') return false;
+    return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ?? false;
+  });
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeInstruction, setActiveInstruction] = useState(emptyInstruction);
@@ -156,6 +165,12 @@ const App = () => {
     if (!searchQuery.trim()) setShowResultsPanel(true);
   }, [searchQuery]);
 
+  useEffect(() => {
+    const nextTheme = isDarkMode ? 'dark' : 'light';
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage?.setItem(THEME_STORAGE_KEY, nextTheme);
+  }, [isDarkMode]);
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -193,15 +208,25 @@ const App = () => {
             ) : (
               <div className={styles.searchMeta}>Tip: type a mnemonic (e.g. LD) or opcode (e.g. 3E).</div>
             )}
-            {searchQuery.trim() ? (
+            <div className={styles.headerActions}>
               <button
                 type="button"
-                className={styles.resultsToggle}
-                onClick={() => setShowResultsPanel((v) => !v)}
+                className={styles.modeToggle}
+                aria-pressed={isDarkMode}
+                onClick={() => setIsDarkMode((v) => !v)}
               >
-                {showResultsPanel ? 'Hide results' : 'Show results'}
+                {isDarkMode ? 'Dark' : 'Light'}
               </button>
-            ) : null}
+              {searchQuery.trim() ? (
+                <button
+                  type="button"
+                  className={styles.resultsToggle}
+                  onClick={() => setShowResultsPanel((v) => !v)}
+                >
+                  {showResultsPanel ? 'Hide results' : 'Show results'}
+                </button>
+              ) : null}
+            </div>
           </div>
         </div>
       </header>
