@@ -1,0 +1,82 @@
+.instruction {
+  background-color: #bfbfbf;
+  text-align: center;
+  width: 100px;
+  padding: 0;
+}
+
+.instruction button {
+  width: 100%;
+  height: 100%;
+  min-height: 74px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: transparent;
+  border: none;
+  padding: 8px 6px;
+  cursor: pointer;
+}
+
+.instruction button:hover,
+.instruction button:focus-visible {
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: 2px solid rgba(37, 99, 235, 0.8);
+  outline-offset: -2px;
+}
+
+.instruction span {
+  display: block;
+}
+
+.mnemonic {
+  font-weight: 700;
+}
+
+.bytes,
+.cycles {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.flags {
+  opacity: 0.9;
+}
+
+.match {
+  box-shadow: inset 0 0 0 3px rgba(37, 99, 235, 0.95);
+}
+
+.eight-bit-transfer-and-io {
+  background-color: #ccccff;
+}
+
+.sixteen-bit-transfer {
+  background-color: #ccffcc;
+}
+
+.eight-bit-arithmetic-and-logical-operation {
+  background-color: #ffff99;
+}
+
+.sixteen-bit-arithmetic-operation {
+  background-color: #ffcccc;
+}
+
+.rotate-shift {
+  background-color: #80ffff;
+}
+
+.bit-operation {
+  background-color: #80ffff;
+}
+
+.jump {
+  background-color: #ffcc99;
+}
+
+.call-and-return {
+  background-color: #ffcc99;
+}
+
+.general-purpose-arithmetic-operations-and-cpu-control {
+  background-color: #ff99cc;
+}
