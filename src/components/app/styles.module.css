@@ -36,17 +36,11 @@
 }
 
 .searchInput {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 12px;
-  background: var(--surface);
-  color: var(--text);
   min-width: 0;
 }
 
 .searchInput:focus {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
+  outline: none;
 }
 
 .toggle {
@@ -77,37 +71,11 @@
 }
 
 .resultsToggle {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 6px 10px;
-  background: var(--surface);
-  cursor: pointer;
   white-space: nowrap;
-  color: var(--text);
-}
-
-.resultsToggle:hover,
-.resultsToggle:focus-visible {
-  background: var(--surface-2);
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
 }
 
 .modeToggle {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 6px 10px;
-  background: var(--surface);
-  cursor: pointer;
   white-space: nowrap;
-  color: var(--text);
-}
-
-.modeToggle:hover,
-.modeToggle:focus-visible {
-  background: var(--surface-2);
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
 }
 
 .body {
@@ -164,11 +132,6 @@
 .resultButton {
   width: 100%;
   text-align: left;
-  border: 1px solid transparent;
-  background: transparent;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
   display: grid;
   grid-template-columns: 70px 1fr;
   gap: 10px;
@@ -176,12 +139,7 @@
   color: var(--text);
 }
 
-.resultButton:hover,
-.resultButton:focus-visible {
-  background: var(--surface-2);
-  border-color: var(--border);
-  outline: none;
-}
+/* Hover/focus handled by NES.css */
 
 .resultOpCode {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

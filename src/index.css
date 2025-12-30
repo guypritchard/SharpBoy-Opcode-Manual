@@ -42,6 +42,12 @@ html[data-theme='dark'] {
   --accent-strong: rgba(96, 165, 250, 0.95);
 }
 
+/* NES.css checkbox tick visibility in dark mode */
+html[data-theme='dark'] .nes-checkbox:checked + span::before,
+html[data-theme='dark'] .nes-checkbox:checked + span::after {
+  color: #fff;
+}
+
 body {
   margin: 0;
   font-family: var(--font-ui);
