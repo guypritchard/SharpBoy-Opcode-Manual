@@ -135,21 +135,19 @@
   grid-template-columns: 96px 1fr;
   gap: 10px;
   align-items: baseline;
-  color: var(--text);
+  color: #111;
 }
 
 /* Hover/focus handled by NES.css */
 
 .resultOpCode {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-weight: 700;
-  color: var(--text);
+  color: inherit;
 }
 
 .resultMnemonic {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  color: var(--text);
-  opacity: 0.9;
+  color: inherit;
+  font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
