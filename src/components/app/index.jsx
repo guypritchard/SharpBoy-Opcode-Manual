@@ -221,7 +221,7 @@ const App = () => {
               {searchQuery.trim() ? (
                 <button
                   type="button"
-                  className={`${styles.resultsToggle} nes-btn`}
+                  className={`${styles.resultsToggle} nes-btn ${isDarkMode ? 'is-dark' : ''}`}
                   onClick={() => setShowResultsPanel((v) => !v)}
                 >
                   {showResultsPanel ? 'Hide results' : 'Show results'}
@@ -235,7 +235,15 @@ const App = () => {
       <div className={styles.body}>
         <div className={[styles.contentGrid, shouldShowResults ? null : styles.contentGridFull].filter(Boolean).join(' ')}>
           {shouldShowResults ? (
-            <aside className={styles.results} aria-label="Search results">
+            <aside
+              className={[
+                styles.results,
+                'nes-container',
+                'is-rounded',
+                isDarkMode ? 'is-dark' : null,
+              ].filter(Boolean).join(' ')}
+              aria-label="Search results"
+            >
               <div className={styles.resultsHeader}>Results</div>
               {matchedInstructions.length === 0 ? (
                 <div className={styles.resultsEmpty}>No matches.</div>
@@ -245,7 +253,7 @@ const App = () => {
                     <li key={instruction.opCode} className={styles.resultsItem}>
                       <button
                         type="button"
-                        className={`${styles.resultButton} nes-btn`}
+                        className={`${styles.resultButton} nes-btn ${isDarkMode ? 'is-dark' : ''}`}
                         onClick={() => openFromSearch(instruction)}
                         data-open-details="true"
                       >
