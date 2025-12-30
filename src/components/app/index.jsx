@@ -211,7 +211,7 @@ const App = () => {
             <div className={styles.headerActions}>
               <button
                 type="button"
-                className={styles.modeToggle}
+                className={`${styles.modeToggle} nes-btn is-primary`}
                 aria-pressed={isDarkMode}
                 onClick={() => setIsDarkMode((v) => !v)}
               >
@@ -220,7 +220,7 @@ const App = () => {
               {searchQuery.trim() ? (
                 <button
                   type="button"
-                  className={styles.resultsToggle}
+                  className={`${styles.resultsToggle} nes-btn`}
                   onClick={() => setShowResultsPanel((v) => !v)}
                 >
                   {showResultsPanel ? 'Hide results' : 'Show results'}
@@ -244,7 +244,7 @@ const App = () => {
                     <li key={instruction.opCode} className={styles.resultsItem}>
                       <button
                         type="button"
-                        className={styles.resultButton}
+                        className={`${styles.resultButton} nes-btn`}
                         onClick={() => openFromSearch(instruction)}
                         data-open-details="true"
                       >

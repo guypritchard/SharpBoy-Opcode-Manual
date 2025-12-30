@@ -45,7 +45,7 @@
   border: 1px solid var(--grid-border);
   padding: 6px 8px;
   width: 100px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-pixel);
 }
 
 .colHeaderActive {
@@ -62,7 +62,7 @@
   border: 1px solid var(--grid-border);
   padding: 6px 8px;
   width: 40px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-pixel);
 }
 
 .rowHeaderActive {

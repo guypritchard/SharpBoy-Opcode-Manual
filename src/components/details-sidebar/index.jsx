@@ -43,7 +43,7 @@ const DetailsSidebar = ({
         type="button"
         aria-label="close details sidebar"
         onClick={hideSidebar}
-        className={styles.close}
+        className={`${styles.close} nes-btn is-error`}
       >
         Close
       </button>
