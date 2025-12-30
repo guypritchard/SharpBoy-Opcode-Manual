@@ -1,0 +1,15 @@
+/* Small tweaks so NES.css plays nicely with our layout + theming */
+
+html[data-theme='dark'] body {
+  background: var(--bg);
+}
+
+.nes-container.with-title > .title {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.nes-btn {
+  white-space: nowrap;
+}
+

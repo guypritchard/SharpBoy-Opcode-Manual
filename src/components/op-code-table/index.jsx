@@ -16,7 +16,7 @@ const OpCodeTable = ({
   isActiveTable,
 }) => (
   <div className={styles.wrapper}>
-    <table className={styles.table}>
+    <table className={`${styles.table} nes-table is-bordered is-centered`}>
       <caption className={styles.caption}>{caption}</caption>
       <tbody>
         <tr>

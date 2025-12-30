@@ -172,7 +172,7 @@ const App = () => {
   }, [isDarkMode]);
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} nes-container is-rounded`}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <h1 className={styles.title}>Game Boy CPU opcodes</h1>
@@ -182,7 +182,7 @@ const App = () => {
             </label>
             <input
               id="search"
-              className={styles.searchInput}
+              className={`${styles.searchInput} nes-input`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Mnemonic, opcode (e.g. 3e / 0x3e / cb11), or category…"
@@ -211,7 +211,7 @@ const App = () => {
             <div className={styles.headerActions}>
               <button
                 type="button"
-                className={styles.modeToggle}
+                className={`${styles.modeToggle} nes-btn is-primary`}
                 aria-pressed={isDarkMode}
                 onClick={() => setIsDarkMode((v) => !v)}
               >
@@ -220,7 +220,7 @@ const App = () => {
               {searchQuery.trim() ? (
                 <button
                   type="button"
-                  className={styles.resultsToggle}
+                  className={`${styles.resultsToggle} nes-btn`}
                   onClick={() => setShowResultsPanel((v) => !v)}
                 >
                   {showResultsPanel ? 'Hide results' : 'Show results'}

@@ -34,6 +34,7 @@ const InstructionCell = (props) => {
         ref={buttonRef}
         id={`opcode-${String(instruction.opCode).toLowerCase()}`}
         data-open-details="true"
+        className="nes-btn"
       >
         <span className={styles.mnemonic}>{instruction.mnemonic}</span>
         <span className={styles.bytes}>{instruction.bytes}</span>
