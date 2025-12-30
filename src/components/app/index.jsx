@@ -221,7 +221,7 @@ const App = () => {
               {searchQuery.trim() ? (
                 <button
                   type="button"
-                  className={`${styles.resultsToggle} nes-btn ${isDarkMode ? 'is-dark' : ''}`}
+                  className={`${styles.resultsToggle} nes-btn ${isDarkMode ? 'is-primary' : ''}`}
                   onClick={() => setShowResultsPanel((v) => !v)}
                 >
                   {showResultsPanel ? 'Hide results' : 'Show results'}
@@ -253,7 +253,7 @@ const App = () => {
                     <li key={instruction.opCode} className={styles.resultsItem}>
                       <button
                         type="button"
-                        className={`${styles.resultButton} nes-btn ${isDarkMode ? 'is-dark' : ''}`}
+                        className={`${styles.resultButton} nes-btn ${isDarkMode ? 'is-success' : ''}`}
                         onClick={() => openFromSearch(instruction)}
                         data-open-details="true"
                       >
