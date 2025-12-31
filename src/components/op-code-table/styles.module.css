@@ -1,9 +1,6 @@
 .wrapper {
-  overflow: auto;
-  max-width: 100%;
   width: 100%;
-  max-height: calc(100vh - 260px);
-  scrollbar-gutter: stable both-edges;
+  max-width: 100%;
 }
 
 .table {

@@ -83,6 +83,9 @@ const App = () => {
   const lastClickedButtonElRef = useRef(null);
   const sidebarRef = useRef(null);
   const sidebarContainerRef = useRef(null);
+  const tableScrollerRef = useRef(null);
+  const cbSectionRef = useRef(null);
+  const [showCbMarker, setShowCbMarker] = useState(false);
 
   const updateSidebarFromCell = (instruction, buttonRef) => {
     setActiveInstruction(instruction);
@@ -173,6 +176,26 @@ const App = () => {
     document.documentElement.dataset.theme = nextTheme;
     window.localStorage?.setItem(THEME_STORAGE_KEY, nextTheme);
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const scroller = tableScrollerRef.current;
+    const cbSection = cbSectionRef.current;
+    if (!scroller || !cbSection || typeof IntersectionObserver === 'undefined') return () => {};
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setShowCbMarker(entry.isIntersecting);
+      },
+      {
+        root: scroller,
+        threshold: 0.2,
+      },
+    );
+
+    observer.observe(cbSection);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className={`${styles.page} sharpboy-app`}>
@@ -280,33 +303,44 @@ const App = () => {
           ) : null}
 
           <main aria-label="Opcode tables" role="main" className={styles.tables}>
-            <h2 className={styles.sectionHeading}>8-bit opcodes</h2>
-            <OpCodeTable
-              opCodesGrid={grids[0]}
-              caption="Game Boy CPU instructions, organized by opcode"
-              setActiveInstruction={updateSidebarFromCell}
-              matchedOpCodesSet={matchedOpCodesSet}
-              hideNonMatches={hideNonMatches}
-              searchQuery={searchQuery.trim()}
-              isActiveTable={activeGridLocation?.gridIndex === 0}
-              activeRowIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.row : null}
-              activeColumnIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.column : null}
-              isDarkMode={isDarkMode}
-            />
+            <div className={styles.tableScroller} ref={tableScrollerRef}>
+              <div className={[styles.cbMarker, showCbMarker ? styles.cbMarkerVisible : null].filter(Boolean).join(' ')} aria-hidden="true">
+                16-bit opcodes
+              </div>
+              <div className={styles.tableStack}>
+                <section className={styles.tableSection}>
+                  <h2 className={styles.sectionHeading}>8-bit opcodes</h2>
+                  <OpCodeTable
+                    opCodesGrid={grids[0]}
+                    caption="Game Boy CPU instructions, organized by opcode"
+                    setActiveInstruction={updateSidebarFromCell}
+                    matchedOpCodesSet={matchedOpCodesSet}
+                    hideNonMatches={hideNonMatches}
+                    searchQuery={searchQuery.trim()}
+                    isActiveTable={activeGridLocation?.gridIndex === 0}
+                    activeRowIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.row : null}
+                    activeColumnIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.column : null}
+                    isDarkMode={isDarkMode}
+                  />
+                </section>
 
-            <h2 className={styles.sectionHeading}>16-bit opcodes (0xCB prefix)</h2>
-            <OpCodeTable
-              opCodesGrid={grids[1]}
-              caption='Game Boy CPU instructions for opcodes prefixed by "CB"'
-              setActiveInstruction={updateSidebarFromCell}
-              matchedOpCodesSet={matchedOpCodesSet}
-              hideNonMatches={hideNonMatches}
-              searchQuery={searchQuery.trim()}
-              isActiveTable={activeGridLocation?.gridIndex === 1}
-              activeRowIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.row : null}
-              activeColumnIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.column : null}
-              isDarkMode={isDarkMode}
-            />
+                <section className={styles.tableSection} ref={cbSectionRef}>
+                  <h2 className={styles.sectionHeading}>16-bit opcodes (0xCB prefix)</h2>
+                  <OpCodeTable
+                    opCodesGrid={grids[1]}
+                    caption='Game Boy CPU instructions for opcodes prefixed by "CB"'
+                    setActiveInstruction={updateSidebarFromCell}
+                    matchedOpCodesSet={matchedOpCodesSet}
+                    hideNonMatches={hideNonMatches}
+                    searchQuery={searchQuery.trim()}
+                    isActiveTable={activeGridLocation?.gridIndex === 1}
+                    activeRowIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.row : null}
+                    activeColumnIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.column : null}
+                    isDarkMode={isDarkMode}
+                  />
+                </section>
+              </div>
+            </div>
           </main>
         </div>
       </div>
