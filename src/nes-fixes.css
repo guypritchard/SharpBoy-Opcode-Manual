@@ -56,7 +56,7 @@ html[data-theme='dark'] .sharpboy-app .nes-checkbox:focus + span::before {
 
 /* NES.css "rounded" borders use `border-image` with an SVG whose fill is dark by default.
    Swap it to white for dark mode so borders are visible. */
-html[data-theme='dark'] .sharpboy-app .nes-container.is-rounded.is-dark,
-html[data-theme='dark'] .sharpboy-app .nes-dialog.is-rounded.is-dark {
-  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z\" fill=\"rgb(255,255,255)\" /></svg>') !important;
+html[data-theme='dark'] .sharpboy-app .nes-container.is-rounded,
+html[data-theme='dark'] .sharpboy-app .nes-dialog.is-rounded {
+  border-image-source: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' version='1.1'><path d='M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z' fill='rgb(255,255,255)' /></svg>") !important;
 }
