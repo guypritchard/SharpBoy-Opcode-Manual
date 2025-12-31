@@ -208,6 +208,11 @@
   padding-left: 18px;
   display: grid;
   gap: 6px;
+
+  li {
+    list-style-type: '❤️';
+    list-style-position: outside;
+  }
 }
 
 .footer a {
