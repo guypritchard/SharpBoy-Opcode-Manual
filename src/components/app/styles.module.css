@@ -131,23 +131,20 @@
 .resultButton {
   width: 100%;
   text-align: left;
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  column-gap: 18px;
-  row-gap: 6px;
+  display: inline-flex !important;
+  justify-content: flex-start;
+  gap: 18px;
   align-items: baseline;
-  color: #111;
 }
 
 /* Hover/focus handled by NES.css */
 
 .resultOpCode {
   font-weight: 700;
-  color: inherit;
+  min-width: 9ch;
 }
 
 .resultMnemonic {
-  color: #000;
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
