@@ -32,7 +32,7 @@
 }
 
 .logo {
-  height: 18px;
+  height: 36px;
   width: auto;
 }
 
@@ -182,6 +182,37 @@
   border: none;
   padding: 0;
   z-index: 30;
+}
+
+.footer {
+  padding: 18px 16px 28px 16px;
+  max-width: 100%;
+}
+
+.footerInner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.footerTitle {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.footerList {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 @media (min-width: 980px) {

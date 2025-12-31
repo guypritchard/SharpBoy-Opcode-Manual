@@ -325,6 +325,26 @@ const App = () => {
         sidebarRef={sidebarRef}
         sidebarContainerRef={sidebarContainerRef}
       />
+
+      <footer className={styles.footer} aria-label="Attributions">
+        <div className={styles.footerInner}>
+          <div className={styles.footerTitle}>Attributions</div>
+          <ul className={styles.footerList}>
+            <li>
+              Game Boy SVG from <a href="https://www.svgrepo.com/" target="_blank" rel="noreferrer">svgrepo.com</a>
+            </li>
+            <li>
+              Styling powered by <a href="https://nostalgic-css.github.io/NES.css/" target="_blank" rel="noreferrer">NES.css</a>
+            </li>
+            <li>
+              Opcode data + core generator logic originally from{' '}
+              <a href="https://meganesu.github.io/generate-gb-opcodes/" target="_blank" rel="noreferrer">
+                meganesu.github.io/generate-gb-opcodes
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 };
