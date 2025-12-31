@@ -224,9 +224,10 @@ const App = () => {
                 type="button"
                 className={`${styles.modeToggle} nes-btn is-primary`}
                 aria-pressed={isDarkMode}
+                aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
                 onClick={() => setIsDarkMode((v) => !v)}
               >
-                {isDarkMode ? 'Dark' : 'Light'}
+                {isDarkMode ? 'Light' : 'Dark'}
               </button>
               {searchQuery.trim() ? (
                 <button
