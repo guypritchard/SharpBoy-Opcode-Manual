@@ -192,7 +192,7 @@ const App = () => {
             </label>
             <input
               id="search"
-              className={`${styles.searchInput} nes-input`}
+              className={`${styles.searchInput} nes-input ${isDarkMode ? 'is-dark' : ''}`.trim()}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Mnemonic, opcode (e.g. 3e / 0x3e / cb11), or category…"
