@@ -31,7 +31,8 @@
   top: 0;
   left: 0;
   z-index: 4;
-  background: var(--grid-header-bg);
+  background: #000;
+  color: #fff;
   border-right: 1px solid var(--grid-border);
   border-bottom: 1px solid var(--grid-border);
   width: 40px;
@@ -41,7 +42,8 @@
   position: sticky;
   top: 0;
   z-index: 3;
-  background: var(--grid-header-bg);
+  background: #000;
+  color: #fff;
   border: 1px solid var(--grid-border);
   padding: 6px 8px;
   width: 100px;
@@ -60,7 +62,8 @@
   position: sticky;
   left: 0;
   z-index: 2;
-  background: var(--grid-header-bg);
+  background: #000;
+  color: #fff;
   border: 1px solid var(--grid-border);
   padding: 6px 8px;
   width: 40px;
