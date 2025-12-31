@@ -14,9 +14,10 @@ const OpCodeTable = ({
   activeRowIndex,
   activeColumnIndex,
   isActiveTable,
+  isDarkMode,
 }) => (
   <div className={styles.wrapper}>
-    <table className={styles.table}>
+    <table className={`${styles.table} nes-table is-bordered is-centered ${isDarkMode ? 'is-dark' : ''}`.trim()}>
       <caption className={styles.caption}>{caption}</caption>
       <tbody>
         <tr>
@@ -94,6 +95,7 @@ OpCodeTable.propTypes = {
   activeRowIndex: PropTypes.number,
   activeColumnIndex: PropTypes.number,
   isActiveTable: PropTypes.bool,
+  isDarkMode: PropTypes.bool,
 };
 
 OpCodeTable.defaultProps = {
@@ -103,4 +105,5 @@ OpCodeTable.defaultProps = {
   activeRowIndex: null,
   activeColumnIndex: null,
   isActiveTable: false,
+  isDarkMode: false,
 };

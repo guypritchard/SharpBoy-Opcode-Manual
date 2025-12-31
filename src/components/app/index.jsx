@@ -290,6 +290,7 @@ const App = () => {
               isActiveTable={activeGridLocation?.gridIndex === 0}
               activeRowIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.row : null}
               activeColumnIndex={activeGridLocation?.gridIndex === 0 ? activeGridLocation?.column : null}
+              isDarkMode={isDarkMode}
             />
 
             <h2 className={styles.sectionHeading}>16-bit opcodes (0xCB prefix)</h2>
@@ -303,6 +304,7 @@ const App = () => {
               isActiveTable={activeGridLocation?.gridIndex === 1}
               activeRowIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.row : null}
               activeColumnIndex={activeGridLocation?.gridIndex === 1 ? activeGridLocation?.column : null}
+              isDarkMode={isDarkMode}
             />
           </main>
         </div>
