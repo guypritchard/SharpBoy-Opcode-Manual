@@ -18,9 +18,22 @@
 }
 
 .title {
-  margin: 0 0 10px 0;
+  margin: 0;
   font-size: 18px;
   font-weight: 800;
+  line-height: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 18px;
+  width: auto;
 }
 
 .searchRow {

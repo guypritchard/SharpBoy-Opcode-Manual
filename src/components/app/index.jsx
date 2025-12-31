@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+﻿import React, { useEffect, useMemo, useRef, useState } from 'react';
 import OpCodeTable from '../op-code-table';
 import DetailsSidebar from '../details-sidebar';
 import { generateAllInstructions } from '../../generators';
@@ -6,6 +6,9 @@ import { createInitialOpCodesGrid, setCellForOpCode } from '../../helpers/grid-h
 import { matchesInstruction } from '../../helpers/instruction-search';
 
 import styles from './styles.module.css';
+
+import gameboyDark from '../../../img/gameboy-dark.svg';
+import gameboyLight from '../../../img/gameboy-light.svg';
 
 const THEME_STORAGE_KEY = 'sharpboy-opcode-manual-theme';
 
@@ -175,7 +178,14 @@ const App = () => {
     <div className={styles.page}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <h1 className={styles.title}>Game Boy CPU opcodes</h1>
+          <div className={styles.brand}>
+            <img
+              className={styles.logo}
+              src={isDarkMode ? gameboyDark : gameboyLight}
+              alt="Game Boy"
+            />
+            <h1 className={styles.title}>Game Boy CPU Opcodes</h1>
+          </div>
           <div className={styles.searchRow}>
             <label className={styles.searchLabel} htmlFor="search">
               Search
@@ -286,7 +296,7 @@ const App = () => {
             <h2 className={styles.sectionHeading}>16-bit opcodes (0xCB prefix)</h2>
             <OpCodeTable
               opCodesGrid={grids[1]}
-              caption='Game Boy CPU instructions for opcodes prefixed by \"CB\"'
+              caption='Game Boy CPU instructions for opcodes prefixed by "CB"'
               setActiveInstruction={updateSidebarFromCell}
               matchedOpCodesSet={matchedOpCodesSet}
               hideNonMatches={hideNonMatches}
@@ -320,3 +330,4 @@ const App = () => {
 };
 
 export default App;
+
