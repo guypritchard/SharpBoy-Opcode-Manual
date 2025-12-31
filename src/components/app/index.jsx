@@ -175,7 +175,7 @@ const App = () => {
   }, [isDarkMode]);
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} sharpboy-app`}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <div className={styles.brand}>

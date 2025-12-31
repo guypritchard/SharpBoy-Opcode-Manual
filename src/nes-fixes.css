@@ -1,17 +1,18 @@
-/* Global overrides for NES.css (CSS Modules won't affect these selectors). */
+/* Global overrides for NES.css (CSS Modules won't affect these selectors).
+   Tip: the app root has a stable `.sharpboy-app` class for easier targeting in DevTools. */
 
-.nes-container {
+.sharpboy-app .nes-container {
   border-image-repeat: unset !important;
 }
 
 /* Dark-mode checkbox visibility (NES.css checkbox uses `input.nes-checkbox + span::before/after`). */
-html[data-theme='dark'] .nes-checkbox + span {
+html[data-theme='dark'] .sharpboy-app .nes-checkbox + span {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-html[data-theme='dark'] .nes-checkbox + span::before {
+html[data-theme='dark'] .sharpboy-app .nes-checkbox + span::before {
   width: 22px !important;
   height: 22px !important;
   margin-right: 0.35rem;
@@ -22,13 +23,13 @@ html[data-theme='dark'] .nes-checkbox + span::before {
   vertical-align: middle;
 }
 
-html[data-theme='dark'] .nes-checkbox:checked + span::before {
+html[data-theme='dark'] .sharpboy-app .nes-checkbox:checked + span::before {
   background: #fff !important;
   border-color: #fff !important;
   box-shadow: 0 0 8px rgba(249, 250, 249, 0.9);
 }
 
-html[data-theme='dark'] .nes-checkbox:checked + span::after {
+html[data-theme='dark'] .sharpboy-app .nes-checkbox:checked + span::after {
   content: '';
   position: absolute;
   width: 6px;
@@ -37,11 +38,10 @@ html[data-theme='dark'] .nes-checkbox:checked + span::after {
   border-top: 0;
   border-left: 0;
   transform: rotate(45deg);
-  left: 6px;
-  top: 3px;
+  left: -20px;
+  top: 0px;
 }
 
-html[data-theme='dark'] .nes-checkbox:focus + span::before {
+html[data-theme='dark'] .sharpboy-app .nes-checkbox:focus + span::before {
   box-shadow: none !important;
 }
-
