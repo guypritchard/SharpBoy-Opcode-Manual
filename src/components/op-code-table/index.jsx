@@ -17,7 +17,7 @@ const OpCodeTable = ({
   isDarkMode,
 }) => (
   <div className={styles.wrapper}>
-    <table className={`${styles.table} nes-table is-bordered is-centered ${isDarkMode ? 'is-dark' : ''}`.trim()}>
+    <table className={`${styles.table} nes-container is-bordered is-centered is-rounded ${isDarkMode ? 'is-dark' : ''}`.trim()}>
       <caption className={styles.caption}>{caption}</caption>
       <tbody>
         <tr>

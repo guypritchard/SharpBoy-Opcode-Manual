@@ -43,10 +43,10 @@ html[data-theme='dark'] {
 }
 
 /* NES.css checkbox tick visibility in dark mode */
-html[data-theme='dark'] .nes-checkbox:checked + span::before,
+/* html[data-theme='dark'] .nes-checkbox:checked + span::before,
 html[data-theme='dark'] .nes-checkbox:checked + span::after {
   color: #fff;
-}
+} */
 
 body {
   margin: 0;

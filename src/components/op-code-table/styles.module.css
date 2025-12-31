@@ -2,11 +2,6 @@
   overflow: auto;
   max-width: 100%;
   width: 100%;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  min-width: 0;
-  max-height: clamp(320px, 65vh, 820px);
   scrollbar-gutter: stable both-edges;
 }
 

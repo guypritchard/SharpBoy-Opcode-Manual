@@ -110,7 +110,7 @@
 
 .results {
   position: sticky;
-  top: 132px;
+  top: 52px;
   max-height: calc(100vh - 150px);
   overflow: auto;
   padding: 0 !important;
@@ -119,22 +119,24 @@
 .resultsHeader {
   position: sticky;
   top: 0;
-  padding: 10px 12px;
+  padding: 12px 12px;
   font-weight: 700;
   border-bottom: 1px solid currentColor;
-  background: transparent;
+  background: inherit;
   z-index: 1;
 }
 
 .resultsEmpty {
-  padding: 12px;
+  padding: 12px 12px 14px;
   opacity: 0.85;
 }
 
 .resultsList {
   list-style: none;
   margin: 0;
-  padding: 6px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
 }
 
 .resultsItem {
@@ -145,8 +147,9 @@
   width: 100%;
   text-align: left;
   display: block !important;
-  padding: 10px 12px;
+  padding: 10px 12px !important;
   line-height: 1.4;
+  margin: 0 !important;
 }
 
 /* Hover/focus handled by NES.css */
