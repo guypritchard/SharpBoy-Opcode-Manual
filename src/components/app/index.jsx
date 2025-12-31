@@ -246,12 +246,7 @@ const App = () => {
         <div className={[styles.contentGrid, shouldShowResults ? null : styles.contentGridFull].filter(Boolean).join(' ')}>
           {shouldShowResults ? (
             <aside
-              className={[
-                styles.results,
-                'nes-container',
-                'is-rounded',
-                isDarkMode ? 'is-dark' : null,
-              ].filter(Boolean).join(' ')}
+              className={styles.results}
               aria-label="Search results"
             >
               <div className={styles.resultsHeader}>Results</div>
@@ -267,9 +262,7 @@ const App = () => {
                         onClick={() => openFromSearch(instruction)}
                         data-open-details="true"
                       >
-                        <span className={styles.resultOpCode}>
-                          {`0x${instruction.opCode.toUpperCase()}`}
-                        </span>
+                        <span className={styles.resultOpCode}>{`0x${instruction.opCode.toUpperCase()}`}</span>
                         <span className={styles.resultMnemonic}>{instruction.mnemonic}</span>
                       </button>
                     </li>

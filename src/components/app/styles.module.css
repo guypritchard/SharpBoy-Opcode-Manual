@@ -114,6 +114,9 @@
   max-height: calc(100vh - 150px);
   overflow: auto;
   padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 .resultsHeader {
@@ -122,7 +125,7 @@
   padding: 10px 12px;
   font-weight: 700;
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-2);
   z-index: 1;
 }
 
@@ -144,24 +147,24 @@
 .resultButton {
   width: 100%;
   text-align: left;
-  display: inline-flex !important;
-  justify-content: flex-start;
-  gap: 18px;
-  align-items: baseline;
+  display: block !important;
+  padding: 10px 12px;
+  line-height: 1.4;
 }
 
 /* Hover/focus handled by NES.css */
 
 .resultOpCode {
   font-weight: 700;
-  min-width: 9ch;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .resultMnemonic {
   font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: block;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .tables {
