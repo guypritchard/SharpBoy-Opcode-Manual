@@ -9,6 +9,10 @@
   border-image-repeat: unset !important;
 }
 
+.sharpboy-app .nes-btn {
+  border-image-repeat: unset !important;
+}
+
 /* Dark-mode checkbox visibility (NES.css checkbox uses `input.nes-checkbox + span::before/after`). */
 html[data-theme='dark'] .sharpboy-app .nes-checkbox + span {
   position: relative;

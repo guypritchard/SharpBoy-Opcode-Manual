@@ -247,7 +247,12 @@ const App = () => {
         <div className={[styles.contentGrid, shouldShowResults ? null : styles.contentGridFull].filter(Boolean).join(' ')}>
           {shouldShowResults ? (
             <aside
-              className={styles.results}
+              className={[
+                styles.results,
+                'nes-container',
+                'is-rounded',
+                isDarkMode ? 'is-dark' : null,
+              ].filter(Boolean).join(' ')}
               aria-label="Search results"
             >
               <div className={styles.resultsHeader}>Results</div>
