@@ -1,0 +1,47 @@
+/* Global overrides for NES.css (CSS Modules won't affect these selectors). */
+
+.nes-container {
+  border-image-repeat: unset !important;
+}
+
+/* Dark-mode checkbox visibility (NES.css checkbox uses `input.nes-checkbox + span::before/after`). */
+html[data-theme='dark'] .nes-checkbox + span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+html[data-theme='dark'] .nes-checkbox + span::before {
+  width: 22px !important;
+  height: 22px !important;
+  margin-right: 0.35rem;
+  background: #0f1115 !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+html[data-theme='dark'] .nes-checkbox:checked + span::before {
+  background: #fff !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 8px rgba(249, 250, 249, 0.9);
+}
+
+html[data-theme='dark'] .nes-checkbox:checked + span::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border: 3px solid #0f1115;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  left: 6px;
+  top: 3px;
+}
+
+html[data-theme='dark'] .nes-checkbox:focus + span::before {
+  box-shadow: none !important;
+}
+
