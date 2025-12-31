@@ -250,12 +250,13 @@ const App = () => {
               className={[
                 styles.results,
                 'nes-container',
+                'with-title',
                 'is-rounded',
                 isDarkMode ? 'is-dark' : null,
               ].filter(Boolean).join(' ')}
               aria-label="Search results"
             >
-              <div className={styles.resultsHeader}>Results</div>
+              <p className="title">Results</p>
               {matchedInstructions.length === 0 ? (
                 <div className={styles.resultsEmpty}>No matches.</div>
               ) : (
@@ -313,7 +314,7 @@ const App = () => {
       {showSidebar ? (
         <button
           type="button"
-          className={styles.backdrop}
+          className={`${styles.modeToggle} nes-btn`}
           aria-label="Close details"
           onClick={hideSidebar}
         />

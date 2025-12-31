@@ -25,17 +25,17 @@
 html[data-theme='dark'] {
   color-scheme: dark;
   --bg: #0b1220;
-  --surface: #0f172a;
+  --surface: #0b1220;
   --surface-2: #111c33;
   --text: #e5e7eb;
   --muted: #a1a1aa;
-  --border: #24324e;
+  --border: #0b1220;
   --shadow: rgba(0, 0, 0, 0.55);
 
-  --grid-border: #4b5563;
+  --grid-border: #0b1220;
   --grid-header-bg: #0b1326;
-  --grid-bg: #111827;
-  --cell-bg: #0b1326;
+  --grid-bg: #0b1220;
+  --cell-bg: #0b1220;
 
   --focus: rgba(96, 165, 250, 0.7);
   --accent-soft: rgba(59, 130, 246, 0.25);
